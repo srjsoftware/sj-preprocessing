@@ -118,21 +118,11 @@ end = time.time()
 
 # sf-gSSJoin format:
 
+output = open(sys.argv[1] + '_q' + str(q), 'w')
+
 for setx in orderedBySize:
 	for qgram in setx:
-		sys.stdout.write(str(qgram) + " ")
-	print ""
+		output.write(str(qgram) + " ")
+	output.write("\n")
 	
 exit()
-
-
-# gSSJoin format:
-
-i = 0
-
-for setx in orderedBySize:
-	sys.stdout.write(str(i) + " 0 ")
-	i += 1
-	for qgram in setx:
-		sys.stdout.write(str(qgram) + " 1 ")
-	print ""
